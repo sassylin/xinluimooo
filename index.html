@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta property="og:image" content="">
+  <meta charset="UTF-8" />
+  <title>Giận hờn chi nữaaaa</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      text-align: center;
+      padding: 50px;
+      background-color: #fff0f5;
+    }
+
+    button {
+      margin: 10px;
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 12px;
+      background-color: #ffb6c1;
+      color: #333;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    button:hover {
+      background-color: #ff69b4;
+      color: white;
+    }
+
+    #secretImage {
+      display: none;
+      margin-top: 30px;
+    }
+
+    img {
+      max-width: 90%;
+      border-radius: 20px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.2);
+    }
+  </style>
+</head>
+<body>
+  <h2>💌 Đừng giận nữa nha? Tụi mình bình thường như trước lại i mà TvT 💌</h2>
+  <p>Chọn câu trả lời đúng đi nè 😭👇</p>
+
+  <button onclick="checkAnswer('right')">Oki được ùi babi, hong giận nữa đôu mà</button><br>
+  <button onclick="checkAnswer('wrong')">Còn giận, không chấp nhận xin lỗi</button><br>
+  <button onclick="checkAnswer('wrong')">Tôi ghét iem</button>
+
+  <div id="secretImage">
+    <h3>✨ Hết giận rùi nè, thưởng tấm ảnh bí mật nha 💖</h3>
+    <div id="secretImage">
+      <h3>✨ Hết giận rùi nè, thưởng mấy tấm ảnh bí mật nha 💖</h3>
+      <img src="secret1.png" alt="ảnh phụ 1" />
+      <img src="secret2.png" alt="ảnh phụ 2" />
+      <img src="secret3.png" alt="ảnh phụ 3" />
+      <img src="secret.jpg" alt="ảnh bí mật chính" />
+    </div>
+  </div>
+
+  <!-- Nhạc nền -->
+  <audio id="bgMusic" autoplay loop>
+    <source src="music.mp3" type="audio/mpeg">
+    Trình duyệt của bạn không hỗ trợ nhạc :(
+  </audio>
+
+  <script>
+    function checkAnswer(answer) {
+      if (answer === 'right') {
+        document.getElementById("secretImage").style.display = "block";
+      } else {
+        alert("Huhu chọn sai rồi 😭 Chọn lại câu tha thứ điii~");
+      }
+    }
+
+    // Auto play fix for một số trình duyệt (mobile có thể cần user interaction mới phát)
+    window.addEventListener('click', () => {
+      const music = document.getElementById("bgMusic");
+      if (music.paused) {
+        music.play().catch(() => {});
+      }
+    });
+  </script>
+</body>
+</html>
